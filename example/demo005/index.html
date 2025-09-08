@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>おみくじ</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+    }
+    #result {
+      font-size: 2em;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>おみくじ</h1>
+  <button id="draw">おみくじを引く</button>
+  <div id="result"></div>
+  <script>
+    const results = [
+      "大吉",
+      "中吉",
+      "小吉",
+      "吉",
+      "末吉",
+      "凶",
+      "大凶"
+    ];
+    const drawButton = document.getElementById('draw');
+    const resultDiv = document.getElementById('result');
+
+    drawButton.addEventListener('click', () => {
+      const randomIndex = Math.floor(Math.random() * results.length);
+      resultDiv.textContent = results[randomIndex];
+    });
+  </script>
+</body>
+</html>
